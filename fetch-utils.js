@@ -1,11 +1,15 @@
-const SUPABASE_URL = '';
-const SUPABASE_KEY = '';
+const SUPABASE_URL = 'https://tfmffhhouzltgbgztitj.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MTMzNzQ1NywiZXhwIjoxOTU2OTEzNDU3fQ.vHMFwHEItZAfZYwxyc9qtPFl1t7k7wtBTYhNj76bH84';
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export async function getUser() {
     return client.auth.session();
 }
+
+//new name, new message, default city
+//castle, land, creature, message update
+//old user: get city
 
 
 export async function checkAuth() {
