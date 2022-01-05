@@ -8,14 +8,13 @@ export async function getUser() {
 }
 
 //new name, new message, default city
-//castle, land, creature, message update
 //old user: get city
 export async function getTown() {
     const response = await client
         .from('builder')
         .select()
         .single();
-
+    
     return checkError(response);
 }
 
@@ -26,14 +25,63 @@ export async function getDefaultTown() {
             {
                 name: 'Arcadia',
                 land: 1,
-                castle: 2,
+                castle: 1,
                 creature: 1,
                 message: []
             }
         ]);
+    
+    return checkError(response);
+}
+
+export async function updateName(newName) {
+    const user = await getUser();
+    
+    const response = await client
+        .from('builder')
+        .update({ name : newName })
+        .match({ user_id: user.user.id })
+        .single();
+    
+    return checkError(response);
+}
+//castle, land, creature, message update
+export async function updateLand(newId) {
+    const user = await getUser();
+
+    const response = await client
+        .from('builder')
+        .update({ land: newId })
+        .match({ user_id: user.user.id })
+        .single();
+    
+    return checkError(response);
+}
+
+export async function updateCastle(newId) {
+    const user = await getUser();
+
+    const response = await client
+        .from('builder')
+        .update({ castle: newId })
+        .match({ user_id: user.user.id })
+        .single();
 
     return checkError(response);
 }
+
+export async function updateCreature(newId) {
+    const user = await getUser();
+
+    const response = await client
+        .from('builder')
+        .update({ creature: newId })
+        .match({ user_id: user.user.id })
+        .single();
+
+    return checkError(response);
+}
+
 
 export async function checkAuth() {
     const user = await getUser();
