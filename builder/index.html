@@ -8,7 +8,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="../styles/style.css">
+    <!-- <link rel="stylesheet" href="../styles/style.css"> -->
     <link rel="stylesheet" href="../styles/home.css">
     <title>Document</title>
 </head>
@@ -16,7 +16,8 @@
 <body>
     <button id="logout">Logout</button> 
     <main>
-        <div class="dropdowns">
+        <h2>Welcome weary traveler to <span class="town-name"></span></h2>
+        <section class="dropdowns">
             <label>
                 Land
                 <select id="land-dropdown">
@@ -41,8 +42,8 @@
                     <option value="3">3</option>
                 </select>
             </label>
-        </div>
-        <div class="images">
+        </section>
+        <section class="images">
             <div class="land">
                 <img id="land-image">
             </div>
@@ -52,19 +53,23 @@
             <div class="creature">
                 <img id="creature-image">
             </div>
-        </div>
-        <div class="info">
-            <div class="count"></div>
-            <div class="messages"></div>
-            <div>
-                <label>
-                    New message
-                    <input id="message-input" />
-                </label>
-                <button id="message-button">Add a message</button>
+        </section>
+        <section class="inputs">
+            <form class="name-form">
+                <input name="name">
+                <button>Town Name</button>
+            </form>
+            <form class="message-form">
+                <input name="message" value="message">
+                <button>Speaketh</button>
+            </form>
+        </section>
+        <section>
+            <h3>Creature's Messages:</h3>
+            <div class="message-list">
+
             </div>
-            <div class="list"></div>
-        </div>
+        </section>
     </main>
     <script type="module" src="./builder.js"></script>
 </body>
