@@ -1,4 +1,4 @@
-import { checkAuth, logout, getTown, getDefaultTown, updateName } from '../fetch-utils.js';
+import { checkAuth, logout, getTown, getDefaultTown, updateName, updateLand } from '../fetch-utils.js';
 
 const nameForm = document.querySelector('.name-form');
 const townNameElem = document.querySelector('.town-name');
@@ -6,6 +6,9 @@ const landImg = document.querySelector('#land-image');
 const castleImg = document.querySelector('#castle-image');
 const creatureImg = document.querySelector('#creature-image');
 const messageListElem = document.querySelector('.message-list');
+const landDropdown = document.querySelector('#land-dropdown');
+const castleDropdown = document.querySelector('#castle-dropdown');
+const creatureDropdown = document.querySelector('#creature-dropdown');
 
 checkAuth();
 
@@ -29,6 +32,16 @@ window.addEventListener('load', async() => {
         displayTown(town);
     }
 });
+//land dropdown
+    //pull DOM, async/change, const booger=awaitFetchFunc(DOM.value), call displayTown(booger)
+landDropdown.addEventListener('change', async() => {
+    const newLand = await updateLand(landDropdown.value);
+
+    displayTown(newLand);
+});
+//castle dropdown
+//creature dropdown
+
 //name form & button
 nameForm.addEventListener('submit', async(e) => {
     e.preventDefault();
