@@ -13,10 +13,31 @@ body, html {
     height: 100%;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #logout {
     position: fixed;
     right: 20px;
     top: 20px;
     width: 80px;
     padding: 3px 8px;
+}
+
+.images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 20rem;
+    height: 18rem;
+    margin: 3rem 4.2rem;
+    /* border-radius: 120%; */
 }

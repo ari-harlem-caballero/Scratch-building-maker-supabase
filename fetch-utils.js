@@ -26,7 +26,7 @@ export async function getDefaultTown() {
             {
                 name: 'Arcadia',
                 land: 1,
-                castle: 2,
+                castle: 1,
                 creature: 1,
                 message: []
             }
