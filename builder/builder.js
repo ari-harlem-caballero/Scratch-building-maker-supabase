@@ -1,5 +1,6 @@
-import { checkAuth, logout, getTown, getDefaultTown } from '../fetch-utils.js';
+import { checkAuth, logout, getTown, getDefaultTown, updateName } from '../fetch-utils.js';
 
+const nameForm = document.querySelector('.name-form');
 const townNameElem = document.querySelector('.town-name');
 const landImg = document.querySelector('#land-image');
 const castleImg = document.querySelector('#castle-image');
@@ -28,6 +29,20 @@ window.addEventListener('load', async() => {
         displayTown(town);
     }
 });
+//name form & button
+nameForm.addEventListener('submit', async(e) => {
+    e.preventDefault();
+
+    const data = new FormData(nameForm);
+
+    const name = data.get('name');
+
+    const updatedTown = await updateName(name);
+
+    displayTown(updatedTown);
+
+    nameForm.reset();
+});
 //displayCity (tCont, report, loop)
 function displayTown(town) {
     //tCont name
@@ -48,7 +63,7 @@ function displayTown(town) {
         messageListElem.append(messageElem);
     }
 }
-//name form & button
+
 //message form & button
 //land dropdown
 //castle dropdown

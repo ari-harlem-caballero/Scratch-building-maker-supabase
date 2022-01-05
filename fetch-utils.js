@@ -35,6 +35,22 @@ export async function getDefaultTown() {
     return checkError(response);
 }
 
+export async function updateName(newName) {
+    const user = await getUser();
+
+    const response = await client
+        .from('builder')
+        .update({ name : newName })
+        .match({ user_id: user.user.id })
+        .single();
+
+    return checkError(response);
+}
+
+
+
+
+
 export async function checkAuth() {
     const user = await getUser();
 

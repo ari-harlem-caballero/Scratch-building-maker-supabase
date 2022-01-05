@@ -28,6 +28,10 @@ main {
     padding: 3px 8px;
 }
 
+span {
+    font-size: 3rem;
+}
+
 .images {
     display: flex;
     flex-direction: row;
