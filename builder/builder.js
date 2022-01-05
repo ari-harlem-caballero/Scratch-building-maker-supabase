@@ -1,4 +1,12 @@
-import { checkAuth, logout, getTown, getDefaultTown, updateName, updateLand } from '../fetch-utils.js';
+import { 
+    checkAuth, 
+    logout, 
+    getTown, 
+    getDefaultTown, 
+    updateName, 
+    updateLand, 
+    updateCastle, 
+    updateCreature } from '../fetch-utils.js';
 
 const nameForm = document.querySelector('.name-form');
 const townNameElem = document.querySelector('.town-name');
@@ -40,8 +48,17 @@ landDropdown.addEventListener('change', async() => {
     displayTown(newLand);
 });
 //castle dropdown
-//creature dropdown
+castleDropdown.addEventListener('change', async() => {
+    const newCastle = await updateCastle(castleDropdown.value);
 
+    displayTown(newCastle);
+});
+//creature dropdown
+creatureDropdown.addEventListener('change', async() => {
+    const newCreature = await updateCreature(creatureDropdown.value);
+
+    displayTown(newCreature);
+});
 //name form & button
 nameForm.addEventListener('submit', async(e) => {
     e.preventDefault();

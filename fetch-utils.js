@@ -58,7 +58,29 @@ export async function updateLand(newId) {
     return checkError(response);
 }
 
+export async function updateCastle(newId) {
+    const user = await getUser();
 
+    const response = await client
+        .from('builder')
+        .update({ castle: newId })
+        .match({ user_id: user.user.id })
+        .single();
+
+    return checkError(response);
+}
+
+export async function updateCreature(newId) {
+    const user = await getUser();
+
+    const response = await client
+        .from('builder')
+        .update({ creature: newId })
+        .match({ user_id: user.user.id })
+        .single();
+
+    return checkError(response);
+}
 
 
 export async function checkAuth() {
