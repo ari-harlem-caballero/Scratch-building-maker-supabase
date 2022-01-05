@@ -10,7 +10,30 @@ export async function getUser() {
 //new name, new message, default city
 //castle, land, creature, message update
 //old user: get city
+export async function getTown() {
+    const response = await client
+        .from('builder')
+        .select()
+        .single();
 
+    return checkError(response);
+}
+
+export async function getDefaultTown() {
+    const response = await client
+        .from('builder')
+        .insert([
+            {
+                name: 'Arcadia',
+                land: 1,
+                castle: 2,
+                creature: 1,
+                message: []
+            }
+        ]);
+
+    return checkError(response);
+}
 
 export async function checkAuth() {
     const user = await getUser();
