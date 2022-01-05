@@ -33,9 +33,11 @@ function displayTown(town) {
     //tCont name
     townNameElem.textContent = town.name;
     //change img src (land, castle, creature)
-    // landImg.src = `../assets/land-${town.land}.BLEH`;
-    // castleImg.src = `../assets/castle-${town.castle}.BLEH`;
-    // creatureImg.src = `../assetes/creature-${town.creature}.BLEH`;
+    landImg.src = `../assets/land-${town.land}.jpg`;
+
+    castleImg.src = `../assets/castle-${town.castle}.jpg`;
+
+    creatureImg.src = `../assets/creature-${town.creature}.png`;
     //loop messages/render/append
     for (let message of town.message) {
         const messageElem = document.createElement('p');
