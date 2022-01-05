@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <!-- <link rel="stylesheet" href="../styles/style.css"> -->
+    <link rel="stylesheet" href="../styles/home.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="logout">Logout</button> 
+    <main>
+        <h2>Welcome weary traveler to <span class="town-name"></span></h2>
+        <section class="dropdowns">
+            <label>
+                Land
+                <select id="land-dropdown">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </label>
+            <label>
+                Castle
+                <select id="castle-dropdown">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </label>
+            <label>
+                Creature
+                <select id="creature-dropdown">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </label>
+        </section>
+        <section class="images">
+            <div class="land">
+                <img id="land-image">
+            </div>
+            <div class="castle">
+                <img id="castle-image">
+            </div>
+            <div class="creature">
+                <img id="creature-image">
+            </div>
+        </section>
+        <section class="inputs">
+            <form class="name-form">
+                <input name="name" value="name the town">
+                <button>Create</button>
+            </form>
+            <form class="message-form">
+                <input name="message" value="new message">
+                <button>Speaketh</button>
+            </form>
+        </section>
+        <section>
+            <h3>Creature's Messages:</h3>
+            <div class="message-list">
+
+            </div>
+        </section>
+    </main>
+    <script type="module" src="./builder.js"></script>
+</body>
+
+</html>
